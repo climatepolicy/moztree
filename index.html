@@ -9,6 +9,12 @@ body {
   width: 960px;
 }
 
+header{
+    font-size:3em;
+    text-align:center;
+    margin-top:0.5em;
+}
+
 .node {
   border: solid 1px white;
   font: 10px sans-serif;
@@ -24,6 +30,9 @@ body {
 </form>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<header>MOZAMBIQUE LAND USE</header>
+
 <script>
 
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
@@ -51,8 +60,8 @@ d3.json("flare.json", function(error, root) {
       .attr("class", "node")
       .call(position)
       .style("background", function(d) { return d.children ? color(d.name) : null; })
-      .text(function(d) { return d.children ? null : d.name; });
-
+      .text(function(d) { return d.children ? null : d.name; })
+      .style("font-size", "14px");
 
 });
 
@@ -64,6 +73,3 @@ function position() {
 }
 
 </script>
-<body>
-	Mozambique Land Use
-</body>
